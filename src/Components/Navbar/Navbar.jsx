@@ -2,7 +2,7 @@ import "./Navbar.css";
 const Navbar = () => {
   let navList = ["Home", "About", "Exercise", "Contact Us"];
   return (
-    <nav className="navbar py-[10px] px-[20px] min-[768px]:px-[60px] flex min-[768px]:text-[20px] min-[1024px]:text-[25px] font-semibold items-center justify-between">
+    <nav className="navbar py-[10px] px-[20px] min-[768px]:px-[60px] flex min-[768px]:text-[20px] min-[1024px]:text-[25px] font-semibold items-center justify-between text-yellow-300">
       <div
         className="nav-logo-name-box flex
         "
@@ -19,8 +19,8 @@ const Navbar = () => {
       <ul className="nav-list flex  min-[1024px]:w-[55%] items-center justify-evenly max-[600px]:hidden">
         {navList.map((item) => {
           return (
-            <li key={item} className="nav-list-item p-[10px]">
-              {item}
+            <li key={item} className="nav-list-item p-[10px] border-b-2 border-yellow-300 hover:bg-yellow-300 hover:text-black hover:cursor-pointer duration-200 transition ease-in">
+             <a href='#'>{item}</a>
             </li>
           );
         })}

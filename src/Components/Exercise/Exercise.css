@@ -3,34 +3,29 @@
      padding:0px;
      box-sizing: border-box;
 }
-/* .exer-content{
-    border: 2px solid red;
-}
-.exer-ip-box{
-    border: 2px solid black;
-}
-h3{
-    border: 2px solid black;
-} */
-.exer-ip{
-    border: 2px solid blue;
-}
-.search-btn{
-    border: 2px solid yellow;
-    background: red;
-}
+
 .exer-op-div{
     border: 2px solid slateblue;
 }
-.exer-card{
-    /* border: 2px solid royalblue; */
+.exer-op-card{
     background: linear-gradient(90deg, rgb(32, 32, 32), #8b8bf2);
     color: white;
     z-index: 100;
+    box-shadow: 0px 0px 5px 1px yellow;
 }
-/* .exer-card-content{
-    border: 2px solid purple;
+.exer-op-card:hover{
+    scale: 102%;
+    transition: 0.2s ease-in;
+    color: black;
+    background: rgb(253 224 71);
 }
-.exer-card img{
-    border: 2px solid seagreen;
-} */
+.exer-op-card:hover span{
+    color: black;
+}
+.exer-select-card{
+    box-shadow: 0px 0px 5px 1px yellow;
+}
+.exer-select-card:hover{
+  box-shadow: 0px 0px 5px 1px white;
+  scale: 102%;
+}

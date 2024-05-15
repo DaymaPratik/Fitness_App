@@ -1,8 +1,11 @@
+import SeclectCard from "./SeclectCard";
+import ExerciseOpCard from "./ExerciseOpCard";
 import "./Exercise.css";
 // import axios from "axios";
 import { useState } from "react";
 
 const Exercise = () => {
+  let selectArr=["All","Back","Upper Legs","Waist","Shoulder","Bicep","Chest","Lower Legs"]
   let [opDataArr, setOpDataArr] = useState([]);
   let [serachIp, setSearchip] = useState("");
   const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${serachIp}?limit=10`;
@@ -26,7 +29,9 @@ const Exercise = () => {
   }
 
   return (
-    <section className="exer-box">
+    <section className="exer-box" id="Exercise">
+
+      {/* Exercise search box to search exercise from ip tag */}
       <div className="exer-content  text-center h-[35vh] grid items-center">
       <div className="exer-ip-box">
       <h3 className="font-bold text-[25px] min-[600px]:text-[30px] mb-[25px] text-white">
@@ -34,8 +39,8 @@ const Exercise = () => {
         </h3>
         <input
           type="text"
-          placeholder="Serach Body Part...."
-          className="exer-ip text-[15px] min-[400px]:text-[20px] p-[5px] min-[400px]:p-[7px] w-[60%] min-[768px]:w-[40%]
+          placeholder="Search Body Part...."
+          className="exer-ip text-[15px] min-[400px]:text-[20px] p-[5px] min-[400px]:p-[8px] w-[60%] min-[768px]:w-[40%]
       mx-auto"
           value={serachIp}
           onChange={(e) => {
@@ -43,7 +48,7 @@ const Exercise = () => {
           }}
         />
         <button
-          className="search-btn py-[7px] text-[15px] min-[400px]:text-[20px] px-[15px]"
+          className="search-btn py-[7px] text-[15px] min-[400px]:text-[20px] px-[15px] text-yellow-300 border-2 border-yellow-300 hover:bg-yellow-300 hover:text-black hover:cursor-pointer duration-200 transition ease-in"
           onClick={searchOp}
         >
           Seacrh
@@ -51,22 +56,33 @@ const Exercise = () => {
       </div>
       </div>
 
-      <div className="exer-op-cardbox grid grid-cols-1 min-[768px]:grid-cols-2 gap-[20px] min-[1024px]:gap-[30px] w-[95%] min-[1024px]:w-[90%] mx-[auto]">
+
+
+
+       {/* Exercise select box to select exercise type */}
+       <div className="exer-select-box grid grid-cols-1 min-[350px]:grid-cols-2 min-[768px]:grid-cols-3 min-[1024px]:grid-cols-4 gap-[25px] text-white 
+       w-[95%] min-[768px]:w-[90%] mx-auto p-[20px]">
+        {
+          selectArr.map((item)=>{
+            return  <SeclectCard key={item}  name={item} setOpDataArr={setOpDataArr}/>
+          })
+        }
+       </div>
+
+
+
+
+      {/* Exercise Output card box to display op cards */}
+      <div className="exer-op-cardbox grid grid-cols-1 min-[768px]:grid-cols-2 gap-[30px] w-[95%] min-[1024px]:w-[90%] mx-[auto] py-[35px] ">
         {opDataArr.map((item) => {
           return (
-            <div className="exer-card  max-[500px]:h-fit min-[500px]:flex justify-center items-center
-            " key={item.id}>
-              <div className="exer-card-content max-[500px]:mx-auto w-[90%] min-[500px]:w-[55%] p-[15px] h-fit">
-              <h2 className="text-[23px] min-[400px]:text-[27px] min-[1024px]:text-[30px] font-bold">Body Part:-{item.bodyPart}</h2>
-              <p className="text-[18px] min-[400px]:text-[22px] min-[1024px]:text-[25px] font-semibold">Equipment:-{item.equipment}</p>
-              <h4 className="text-[15px] min-[400px]:text-[20px] ">Name:-{item.name}</h4>
-              
-              </div>
-              <img src={item.gifUrl} alt="" className="h-[100%] max-[500px]:mx-auto w-[90%]  min-[500px]:w-[45%]"/>
-            </div>
+           <ExerciseOpCard item={item} key={item.id}/>
           );
         })}
       </div>
+
+
+
     </section>
   );
 };
