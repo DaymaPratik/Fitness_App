@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+     padding:0px;
+     box-sizing: border-box;
+}
+/* .exer-content{
+    border: 2px solid red;
+}
+.exer-ip-box{
+    border: 2px solid black;
+}
+h3{
+    border: 2px solid black;
+} */
+.exer-ip{
+    border: 2px solid blue;
+}
+.search-btn{
+    border: 2px solid yellow;
+    background: red;
+}
+.exer-op-div{
+    border: 2px solid slateblue;
+}
+.exer-card{
+    /* border: 2px solid royalblue; */
+    background: linear-gradient(90deg, rgb(32, 32, 32), #8b8bf2);
+    color: white;
+    z-index: 100;
+}
+/* .exer-card-content{
+    border: 2px solid purple;
+}
+.exer-card img{
+    border: 2px solid seagreen;
+} */

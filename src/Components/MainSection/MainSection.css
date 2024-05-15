@@ -1,0 +1,11 @@
+.main-box{
+    /* border: 2px solid red; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-box-child{
+    /* border: 2px solid rgb(0, 26, 255); */
+ background: black;
+ opacity: 0.7;
+}

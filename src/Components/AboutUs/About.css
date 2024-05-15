@@ -1,0 +1,16 @@
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;    
+}
+/* .about-box{
+    border: 2px solid yellow;
+} */
+.about-child-box{
+    z-index: 100;
+    background: linear-gradient(90deg,black,black,transparent);
+}
+/* .about-content{
+    border: 2px solid white; 
+} */
+
